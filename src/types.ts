@@ -1,3 +1,4 @@
+// Multiple results
 export interface ResultsData {
   preference: null
   pagination: Pagination
@@ -49,7 +50,8 @@ export interface Pagination {
   current_page: number
 }
 
-export interface Welcome {
+// Single Artwork
+export interface Artwork {
   data: Data
   info: Info
   config: Config

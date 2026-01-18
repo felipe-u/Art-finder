@@ -1,4 +1,5 @@
 import type { Datum } from '../types'
+import { Item } from './Item'
 
 interface Props {
   results: Datum[]
@@ -6,9 +7,9 @@ interface Props {
 
 export function Results({ results }: Props) {
   return (
-    <>
+    <div className='results-container'>
       {results.length > 0 &&
-        results.map((item) => <p key={item.id}>{item.title}</p>)}
-    </>
+        results.map((item) => <Item key={item.id} item={item} />)}
+    </div>
   )
 }
