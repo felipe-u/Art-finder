@@ -6,6 +6,7 @@ function App() {
   return (
     <div className='app-container'>
       <header>
+        <h1>Art Finder</h1>
         <Finder />
       </header>
 
