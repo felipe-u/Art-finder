@@ -1,10 +1,18 @@
 import './App.css'
+import { Finder } from './components/Finder'
+import { Results } from './components/Results'
 
 function App() {
   return (
-    <>
-      <h1>Art Finder</h1>
-    </>
+    <div className='app-container'>
+      <header>
+        <Finder />
+      </header>
+
+      <main>
+        <Results />
+      </main>
+    </div>
   )
 }
 
