@@ -1,13 +1,18 @@
 import { useState } from 'react'
 import { searchArtworksWith } from '../service/artworks'
+import type { Datum } from '../types'
 
-export function Finder() {
+interface Props {
+  onSetResults: (data: Datum[]) => void
+}
+
+export function Finder({ onSetResults }: Props) {
   const [query, setQuery] = useState('')
 
   const handleQuery = async () => {
     if (!query) return
     const results = await searchArtworksWith(query)
-    console.log(results.data)
+    onSetResults(results.data)
   }
 
   return (

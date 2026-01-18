@@ -1,12 +1,14 @@
-import { Item } from './Item'
+import type { Datum } from '../types'
 
-export function Results() {
+interface Props {
+  results: Datum[]
+}
+
+export function Results({ results }: Props) {
   return (
     <>
-      <p>Results component working</p>
-      <Item />
-      <Item />
-      <Item />
+      {results.length > 0 &&
+        results.map((item) => <p key={item.id}>{item.title}</p>)}
     </>
   )
 }
