@@ -3,7 +3,7 @@
   column-gap: 50px;
   row-gap: 50px;
   width: 100%;
-  margin-top: 25px;
+  margin: 25px 0;
   position: relative;
 }
 
@@ -15,4 +15,16 @@
   text-align: center;
   font-size: 1.5em;
   margin: 0 auto;
+}
+
+@media (max-width: 1080px) {
+  .results-container {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 800px) {
+  .results-container {
+    column-count: 1;
+  }
 }
