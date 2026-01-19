@@ -5,7 +5,7 @@ import { Results } from './components/Results'
 import type { Datum } from './types'
 
 function App() {
-  const [results, setResults] = useState<Datum[]>([])
+  const [results, setResults] = useState<Datum[] | null>(null)
 
   const onSetResults = (data: Datum[]) => {
     setResults(data)
