@@ -3,6 +3,7 @@ import type { Artwork, Datum } from '../types'
 import { fetchArtworkData } from '../service/artworks'
 import { DEFAULT_IMG_URL } from '../consts'
 import { useImg } from '../hooks/useImg'
+import '../styles/Item.css'
 
 interface Props {
   item: Datum

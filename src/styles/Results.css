@@ -1,0 +1,18 @@
+.results-container {
+  column-count: 3;
+  column-gap: 50px;
+  row-gap: 50px;
+  width: 100%;
+  margin-top: 25px;
+  position: relative;
+}
+
+.results-container p {
+  position: absolute;
+  width: max-content;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-size: 1.5em;
+  margin: 0 auto;
+}

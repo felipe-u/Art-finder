@@ -2,6 +2,7 @@ import { useState } from 'react'
 import type { Artwork, Datum } from '../types'
 import { Item } from './Item'
 import { FullArtwork } from './FullArtwork'
+import '../styles/Results.css'
 
 interface Props {
   results: Datum[] | null
