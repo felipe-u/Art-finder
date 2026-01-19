@@ -4,6 +4,7 @@ import { fetchArtworkData } from '../service/artworks'
 import { DEFAULT_IMG_URL } from '../consts'
 import { useImg } from '../hooks/useImg'
 import '../styles/Item.css'
+import { shorthenTitle } from '../util/title'
 
 interface Props {
   item: Datum
@@ -39,7 +40,7 @@ export function Item({ item, openArtworkBanner }: Props) {
             src={artworkImgSrc || DEFAULT_IMG_URL}
             alt={item?.thumbnail?.alt_text || 'Nice piece of art'}
           />
-          <h3>{artwork?.data.title}</h3>
+          <h3>{shorthenTitle(artwork?.data.title)}</h3>
         </div>
       )}
     </div>
