@@ -1,7 +1,11 @@
 import { useEffect, useState } from 'react'
 import type { Artwork, Datum } from '../types'
 import { fetchArtworkData } from '../service/artworks'
-import { ARTWORK_IMG_SRC, ARTWORK_IMG_SRC_END } from '../consts'
+import {
+  ARTWORK_IMG_SRC,
+  ARTWORK_IMG_SRC_END,
+  DEFAULT_IMG_URL,
+} from '../consts'
 
 interface Props {
   item: Datum
@@ -38,8 +42,15 @@ export function Item({ item }: Props) {
 
   return (
     <div className='item-container'>
-      <img src={artworkImgSrc} alt='Random img' />
-      <h3>{artwork?.data.title}</h3>
+      {artwork && item && (
+        <>
+          <img
+            src={artworkImgSrc || DEFAULT_IMG_URL}
+            alt={item?.thumbnail?.alt_text || 'Nice piece of art'}
+          />
+          <h3>{artwork?.data.title}</h3>
+        </>
+      )}
     </div>
   )
 }
