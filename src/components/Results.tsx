@@ -1,8 +1,9 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import type { Artwork, Datum } from '../types'
 import { Item } from './Item'
 import { FullArtwork } from './FullArtwork'
 import '../styles/Results.css'
+import '../styles/Banner.css'
 
 interface Props {
   results: Datum[] | null
@@ -18,6 +19,14 @@ export function Results({ results }: Props) {
   const closeArtworkBanner = () => {
     setArtwork(null)
   }
+
+  useEffect(() => {
+    document.body.style.overflow = artwork ? 'hidden' : 'auto'
+
+    return () => {
+      document.body.style.overflow = 'auto'
+    }
+  }, [artwork])
 
   return (
     <>
@@ -38,12 +47,10 @@ export function Results({ results }: Props) {
 
       {artwork && (
         <div className='outer-banner'>
-          <div className='inner-banner'>
-            <FullArtwork
-              artwork={artwork}
-              closeArtworkBanner={closeArtworkBanner}
-            />
-          </div>
+          <FullArtwork
+            artwork={artwork}
+            closeArtworkBanner={closeArtworkBanner}
+          />
         </div>
       )}
     </>
