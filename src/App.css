@@ -17,11 +17,28 @@
 .item-container {
   width: 500px;
   height: 250px;
-  border: 1px solid red;
 }
 
 .item-container img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* Full Artwork */
+.outer-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.733);
+  display: grid;
+  place-items: center;
+}
+
+.inner-banner {
+  width: 50%;
+  height: 25px;
+  background-color: white;
 }

@@ -6,12 +6,13 @@ import { useImg } from '../hooks/useImg'
 
 interface Props {
   item: Datum
+  openArtworkBanner: (artwork: Artwork) => void
 }
 
-export function Item({ item }: Props) {
+export function Item({ item, openArtworkBanner }: Props) {
   const [artwork, setArtwork] = useState<Artwork | null>(null)
-  const { artworkImgSrc } = useImg({ artwork })
   const [error, setError] = useState<string | null>(null)
+  const { artworkImgSrc } = useImg({ artwork })
 
   useEffect(() => {
     if (!item) return
@@ -32,13 +33,13 @@ export function Item({ item }: Props) {
   return (
     <div className='item-container'>
       {artwork && item && (
-        <>
+        <div className='item-desc' onClick={() => openArtworkBanner(artwork)}>
           <img
             src={artworkImgSrc || DEFAULT_IMG_URL}
             alt={item?.thumbnail?.alt_text || 'Nice piece of art'}
           />
           <h3>{artwork?.data.title}</h3>
-        </>
+        </div>
       )}
     </div>
   )
