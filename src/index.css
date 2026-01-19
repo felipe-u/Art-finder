@@ -1,6 +1,20 @@
+:root {
+  --campfire-smoke: #d5d1cb;
+  --warm-leather: #caa359;
+  --dark-souls: #a4a4a0;
+  --fieldstone: #7f7d77;
+  --warmth: #9e562c;
+  --woodburn: #473928;
+  --main-font: 'Limelight';
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: system-ui;
+}
+
+body {
+  background-color: var(--dark-souls);
 }

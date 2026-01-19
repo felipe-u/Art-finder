@@ -6,7 +6,17 @@
   justify-content: center;
 }
 
-/* RESULTS */
+.app-container header {
+ margin-top: 50px;
+ font-size: 1.3em;
+}
+
+.app-container > header h1 {
+  font-family: var(--main-font);
+  text-align: center;
+}
+
+
 .results-container {
   display: flex;
   width: 100%;

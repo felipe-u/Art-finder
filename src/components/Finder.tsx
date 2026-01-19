@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { searchArtworksWith } from '../service/artworks'
 import type { Datum } from '../types'
+import '../styles/Finder.css'
 
 interface Props {
   onSetResults: (data: Datum[]) => void
@@ -22,7 +23,9 @@ export function Finder({ onSetResults }: Props) {
         value={query}
         onChange={(e) => setQuery(e.target.value)}
       />
-      <button onClick={handleQuery}>Search</button>
+      <button onClick={handleQuery} className='finder-btn'>
+        Search
+      </button>
     </div>
   )
 }
