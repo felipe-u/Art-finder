@@ -1,8 +1,8 @@
 import { useState } from 'react'
-import './App.css'
-import { Finder } from './components/Finder'
-import { Results } from './components/Results'
 import type { Datum } from './types'
+import { Finder } from './components/Finder/Finder'
+import { Results } from './components/Results/Results'
+import './App.css' 
 
 function App() {
   const [results, setResults] = useState<Datum[] | null>(null)

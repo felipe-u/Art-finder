@@ -1,7 +1,7 @@
-import { DEFAULT_IMG_URL } from '../consts'
-import { useImg } from '../hooks/useImg'
-import type { Artwork } from '../types'
-import { stripHTML } from '../util/content'
+import type { Artwork } from '../../types'
+import { DEFAULT_IMG_URL } from '../../consts'
+import { useImg } from '../../hooks/useImg'
+import { stripHTML } from '../../util/content'
 
 interface Props {
   artwork: Artwork

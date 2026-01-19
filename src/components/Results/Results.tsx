@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
-import type { Artwork, Datum } from '../types'
-import { Item } from './Item'
-import { FullArtwork } from './FullArtwork'
-import '../styles/Results.css'
-import '../styles/Banner.css'
+import type { Artwork, Datum } from '../../types'
+import { FullArtwork } from '../Banner/Banner'
+import { Item } from '../Item/Item'
+import './Results.css'
+import '../Banner/Banner.css'
 
 interface Props {
   results: Datum[] | null

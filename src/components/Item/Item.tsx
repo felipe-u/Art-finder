@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react'
-import type { Artwork, Datum } from '../types'
-import { fetchArtworkData } from '../service/artworks'
-import { DEFAULT_IMG_URL } from '../consts'
-import { useImg } from '../hooks/useImg'
-import '../styles/Item.css'
-import { shorthenTitle } from '../util/title'
+import type { Artwork, Datum } from '../../types'
+import { DEFAULT_IMG_URL } from '../../consts'
+import { fetchArtworkData } from '../../service/artworks'
+import { useImg } from '../../hooks/useImg'
+import { shorthenTitle } from '../../util/title'
+import './Item.css'
 
 interface Props {
   item: Datum

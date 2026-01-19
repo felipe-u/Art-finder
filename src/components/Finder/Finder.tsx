@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import { searchArtworksWith } from '../service/artworks'
-import type { Datum } from '../types'
-import '../styles/Finder.css'
+import type { Datum } from '../../types'
+import { searchArtworksWith } from '../../service/artworks'
+import './Finder.css'
 
 interface Props {
   onSetResults: (data: Datum[]) => void
