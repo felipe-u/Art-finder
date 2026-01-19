@@ -1,11 +1,8 @@
 import { useEffect, useState } from 'react'
 import type { Artwork, Datum } from '../types'
 import { fetchArtworkData } from '../service/artworks'
-import {
-  ARTWORK_IMG_SRC,
-  ARTWORK_IMG_SRC_END,
-  DEFAULT_IMG_URL,
-} from '../consts'
+import { DEFAULT_IMG_URL } from '../consts'
+import { useImg } from '../hooks/useImg'
 
 interface Props {
   item: Datum
@@ -13,7 +10,7 @@ interface Props {
 
 export function Item({ item }: Props) {
   const [artwork, setArtwork] = useState<Artwork | null>(null)
-  const [artworkImgSrc, setArtworkImgSrc] = useState('')
+  const { artworkImgSrc } = useImg({ artwork })
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
@@ -29,14 +26,6 @@ export function Item({ item }: Props) {
     }
     fetchData()
   }, [item])
-
-  useEffect(() => {
-    if (!artwork) return
-
-    setArtworkImgSrc(
-      `${ARTWORK_IMG_SRC}/${artwork.data.image_id}/${ARTWORK_IMG_SRC_END}`,
-    )
-  }, [artwork])
 
   if (error) return <p>{error}</p>
 
