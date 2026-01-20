@@ -13,7 +13,7 @@ export function Finder({ onSetResults }: Props) {
   const handleQuery = async () => {
     if (!query) return
     const results = await searchArtworksWith(query)
-    onSetResults(results.data)
+    onSetResults(results)
   }
 
   return (
